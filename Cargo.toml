@@ -1,0 +1,17 @@
+[package]
+name = "cargo-chat"
+description = "Chat with an LLM that understands your project and its dependencies."
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1"
+blake3 = "1.8"
+clap = { version = "4.5", features = ["derive", "env"] }
+pulldown-cmark = "0.13"
+termimad = "0.34"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "io-util"] }
+serde = "1"
+serde_json = "1"
+# TODO: Change sqlx to support any of the available DBs.
+sqlx = { version = "0.8", default-features = false, features = ["sqlite", "json", "macros", "migrate", "runtime-tokio"] }
